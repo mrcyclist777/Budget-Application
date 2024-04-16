@@ -65,49 +65,11 @@ int DateMethods::convertFromStringDateToIntWithoutDashes(string date) {
 }
 
 string DateMethods::getCurrentDate() {
-
-    /* stringstream date;
-
-    const auto& givemetime = chrono::system_clock::to_time_t(chrono::system_clock::now());
-    date << put_time(localtime(&givemetime), "%Y-%m-%d");
-
-    return date.str();
-    */
     stringstream ss;
     auto now = chrono::system_clock::now();
     auto in_time_t = chrono::system_clock::to_time_t(now);
     ss << put_time(localtime(&in_time_t), "%Y-%m-%d");
     return ss.str();
-
-    /* time_t t;
-    stringstream ssYear, ssMonth, ssDay;
-
-    t = time(0);
-    tm* now = localtime(&t);
-
-    ssYear << (now->tm_year + 1900);
-    string year = ssYear.str();
-    int yearInt = stoi(year);
-
-    ssMonth << (now->tm_mon + 1);
-    string month = ssMonth.str();
-    int monthInt = stoi(month);
-
-    ssDay << (now->tm_mday);
-    string day = ssDay.str();
-    int dayInt = stoi(day);
-
-    if (stoi(month) <= 9) {
-        month = "0" + month;
-    }
-
-    if (stoi(day) <= 9) {
-        day = "0" + day;
-    }
-
-    string dateAsString = year + "-" + month + "-" + day;
-
-    return dateAsString; */
 }
 
 string DateMethods::convertFromIntToString(int num) {
