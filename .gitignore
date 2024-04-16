@@ -1,0 +1,11 @@
+bin/
+obj/
+BudgetApp.mm
+BudgetApplication.cbp
+BudgetApplication.cscope_file_list
+BudgetApplication.depend
+BudgetApplication.uxf
+BudgetApplication.layout
+expenses.xml
+users.xml
+incomes.xml
