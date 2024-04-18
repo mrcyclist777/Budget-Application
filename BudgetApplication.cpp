@@ -3,7 +3,7 @@
 void BudgetApplication::menu() {
     char choice;
     while (true) {
-        if (userManager.getLoggedUserId() == 0) {
+        if (!userManager.ifTheUserLoggedIn()) {
             choice = AuxiliaryMethods::selectOptionsFromHomeMenu();
             switch (choice) {
             case '1':
@@ -82,22 +82,14 @@ void BudgetApplication::userLogout() {
     balanceManager = NULL;
 }
 
-bool BudgetApplication::ifTheUserIsLoggedIn() {
-    if (userManager.getLoggedUserId() != 0) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
 void BudgetApplication::displayLastMonthBudget() {
-    balanceManager -> displayLastMonthBudget();
+    balanceManager->displayLastMonthBudget();
 }
 
 void BudgetApplication::displayThisMonthBudget() {
-    balanceManager -> displayThisMonthBudget();
+    balanceManager->displayThisMonthBudget();
 }
 
 void BudgetApplication::displayAnyTimeBudget() {
-    balanceManager -> displayAnyTimeBudget();
+    balanceManager->displayAnyTimeBudget();
 }

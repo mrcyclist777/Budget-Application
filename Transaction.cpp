@@ -21,7 +21,8 @@ double Transaction::getAmount() {
 }
 
 void Transaction::setTransactionId(int newTransactionId) {
-    transactionId = newTransactionId;
+    if (newTransactionId >= 0)
+        transactionId = newTransactionId;
 }
 
 void Transaction::setUserId(int newUserId) {

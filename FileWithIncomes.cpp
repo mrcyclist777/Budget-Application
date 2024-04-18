@@ -12,7 +12,7 @@ void FileWithIncomes::addIncomeToFile(Transaction income) {
     xml.IntoElem();
     xml.AddElem("Income");
     xml.IntoElem();
-    xml.AddElem("IncomeId", DateMethods::convertFromIntToString(income.getTransactionId()));
+    xml.AddElem("IncomeId", DateMethods::convertFromIntToString(income.getTransactionId() + 1));
     xml.AddElem("UserId", income.getUserId());
     xml.AddElem("Date", DateMethods::convertFromIntToString(income.getDate()));
     xml.AddElem("Item", income.getItem());
